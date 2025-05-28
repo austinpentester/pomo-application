@@ -1,4 +1,8 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import InputField from "../../Components/InputField/InputField";
+import Button from "../../Components/Button/Button";
+import './Signup.css';
+
 
 const Signup = () => {
     const [formDate, setFormDate] = useState({
@@ -18,7 +22,7 @@ const Signup = () => {
     const validateEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(String(email).toLowerCase());
-    };
+      };
 
     const validateForm = () => {
         let valid = true;
@@ -77,8 +81,62 @@ const Signup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (validateForm())
+        if (validateForm()){
+            console.log('Form submitted: ', formDate);
+            alert('Signup successful!');
+        }
     }
+
+    return(
+        <div className="signup-container">
+            <h1>Create an Account</h1>
+            <form onSubmit={handleSubmit} className="signup-form">
+                <InputField
+                    type="text"
+                    name="name"
+                    value={formDate.name}
+                    onChange={handleChange}
+                    placeholder="Enter your name"
+                    error={errors.name}
+                    label="Full Name"
+                />
+
+                <InputField
+                    type="email"
+                    name="email"
+                    value={formDate.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                    error={errors.email}
+                    label="Email"
+                />
+
+                <InputField
+                    type="password"
+                    name="password"
+                    value={formDate.password}
+                    onChange={handleChange}
+                    placeholder="Enter your password"
+                    error={errors.password}
+                    label="Password"
+                />
+
+                <InputField
+                    type="password"
+                    name="confirmPassword"
+                    value={formDate.confirmPassword}
+                    onChange={handleChange}
+                    placeholder="Confirm your password"
+                    error={errors.confirmPassword}
+                    label="Confirm Password"
+                />
+
+                <Button type="submit" disabled={Object.values(errors).some(error => error)}>
+                    Sign Up
+                </Button>
+            </form>
+        </div>
+    );
 }
 
 
