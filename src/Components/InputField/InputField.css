@@ -1,0 +1,27 @@
+.input-field{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label{
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-field input{
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.input-field input.error{
+    border-color: #ff4444;
+}
+
+.error-message{
+    color: #ff4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
