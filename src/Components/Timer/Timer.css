@@ -1,0 +1,239 @@
+/* Colors */
+:root {
+    --pomodoro: #FF6B6B;
+    --short-break: #4ECDC4;
+    --long-break: #45B7D1;
+    --light-gray: #E8E8E8;
+    --dark-gray: #8B8B8B;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+  }
+  
+  /* Base styles */
+  .timer-container {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  .timer-card {
+    background: var(--light-gray);
+    border-radius: 20px;
+    padding: 2.5rem 10rem 2.5rem 10rem;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Mode selector */
+  .mode-selector {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mode-button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--white);
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+  }
+  
+  .mode-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .pomodoro-active {
+    background: var(--pomodoro);
+    color: var(--white);
+  }
+  
+  .shortBreak-active {
+    background: var(--short-break);
+    color: var(--white);
+  }
+  
+  .longBreak-active {
+    background: var(--long-break);
+    color: var(--white);
+  }
+  
+  /* Timer display */
+  .timer-display {
+    margin-bottom: 1rem;
+  }
+  
+  .time {
+    font-size: 6.5rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  
+  .timer-label {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .pomodoro-active ~ .timer-display .timer-label {
+    color: var(--pomodoro);
+  }
+  
+  .shortBreak-active ~ .timer-display .timer-label {
+    color: var(--short-break);
+  }
+  
+  .longBreak-active ~ .timer-display .timer-label {
+    color: var(--long-break);
+  }
+  
+  /* Timer controls */
+  .timer-controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .start-button, .reset-button {
+    flex: 1;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .start-button {
+    background: var(--pomodoro);
+    color: var(--white);
+  }
+  
+  .shortBreak-active ~ .timer-controls .start-button {
+    background: var(--short-break);
+  }
+  
+  .longBreak-active ~ .timer-controls .start-button {
+    background: var(--long-break);
+  }
+  
+  .reset-button {
+    background: var(--white);
+    color: var(--text-dark);
+  }
+  
+  .start-button:hover, .reset-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Time adjustment */
+  .time-adjustment {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .adjust-button {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .adjust-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+  
+  .adjust-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  /* Statistics */
+  .stats-container {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  
+  .pomodoro-stat {
+    color: var(--pomodoro);
+  }
+  
+  .shortBreak-active ~ .stats-container .pomodoro-stat {
+    color: var(--short-break);
+  }
+  
+  .longBreak-active ~ .stats-container .pomodoro-stat {
+    color: var(--long-break);
+  }
+  
+  .next-stat {
+    font-size: 1rem;
+    color: var(--pomodoro);
+  }
+  
+  .shortBreak-active ~ .stats-container .next-stat {
+    color: var(--short-break);
+  }
+  
+  .longBreak-active ~ .stats-container .next-stat {
+    color: var(--long-break);
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .timer-card {
+      padding: 1.5rem;
+    }
+    
+    .mode-selector {
+      flex-direction: column;
+    }
+    
+    .time {
+      font-size: 4.5rem;
+    }
+  }
