@@ -10,6 +10,7 @@ import Timer from "./Components/Timer/Timer";
 import MusicPlayer from "./Components/MusicPlayer/MusicPlayer";
 import HeatMap from "./Components/HeatMap/HeatMap";
 import TodoList from "./Components/TodoList/TodoList";
+import Notes from "./Components/Notes/Notes";
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Timer/>
         <HeatMap/>
         <TodoList/>
+        <Notes/>
       </div>
     ); 
   }
