@@ -1,0 +1,25 @@
+.container{
+  height: 410px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #b8b8b8;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.container > h1{
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.container:hover > h1 {
+  color: #333;
+}

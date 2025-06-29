@@ -1,0 +1,234 @@
+.timer-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  display: flex;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.timer-container:hover {
+  transform: translateY(-5px);
+  
+}
+
+.timer-card {
+  background: #E8E8E8;
+  border-radius: 15px;
+  margin-top: -10px;
+  padding: 25px 40px;
+  width: 700px;
+  height: 360px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mode-selector {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.mode-button {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: #ffffff;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.mode-button.pomodoro-active {
+  background: #FF6B6B;
+  color: #ffffff;
+}
+
+.mode-button.short-break-active {
+  background: #4ECDC4;
+  color: #ffffff;
+}
+
+.mode-button.long-break-active {
+  background: #45B7D1;
+  color: #ffffff;
+}
+
+.timer-display {
+  margin-bottom: 12px;
+}
+
+.time {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #333;
+  line-height: 2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: -20px;
+}
+
+.timer-label.pomodoro-label {
+  color: #FF6B6B;
+}
+
+.timer-label.shortBreak-label {
+  color: #4ECDC4;
+}
+
+.timer-label.longBreak-label {
+  color: #45B7D1;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.start-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #ffffff;
+}
+
+.start-button.pomodoro-button {
+  background: #FF6B6B;
+}
+
+.start-button.shortBreak-button {
+  background: #4ECDC4;
+}
+
+.start-button.longBreak-button {
+  background: #45B7D1;
+}
+
+.reset-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: #ffffff;
+  color: #333;
+}
+
+.time-adjustment {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.adjust-button {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.adjust-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stats-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.stat-value.pomodoro-stat {
+  color: #FF6B6B;
+}
+
+.stat-value.shortBreak-stat {
+  color: #4ECDC4;
+}
+
+.stat-value.longBreak-stat {
+  color: #45B7D1;
+}
+
+.stat-value.next-stat {
+  font-size: 0.8rem;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Hover effects */
+.mode-button:hover:not(.pomodoro-active):not(.short-break-active):not(.long-break-active) {
+  background: #f0f0f0;
+}
+
+.start-button:hover, .reset-button:hover {
+  transform: translateY(-2px);
+}
+
+.adjust-button:hover:not(.disabled) {
+  background: #f0f0f0;
+}
+
+@media (max-width: 480px) {
+  .timer-card {
+    padding: 20px;
+  }
+  
+  .time {
+    font-size: 3rem;
+  }
+  
+  .mode-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .start-button, .reset-button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
