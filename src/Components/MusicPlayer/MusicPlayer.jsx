@@ -98,8 +98,8 @@ const MusicPlayer = () => {
   return (
     <div className="music-player-container">
       <div className="music-player-header">
-        <h1 className="music-player-title">Study Music</h1>
-        <h2 className="music-player-track-name">{tracks[currentTrack].name}</h2>
+        <h1 className="music-player-title">Study Music: <span className="music-player-track-name">{tracks[currentTrack].name}</span></h1>
+        <h2 className="music-player-track-name"></h2>
       </div>
 
       <div className="music-player-progress">

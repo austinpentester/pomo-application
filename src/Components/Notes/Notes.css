@@ -1,11 +1,16 @@
 .notes-container {
-    width: 400px;
+    width: 360px;
     background-color: #b8b8b8;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
+    transition: all 0.3s ease;
+}
+
+.notes-container:hover {
+  transform: translateY(-5px);
+}
   
   .notes-header {
     display: flex;
@@ -55,7 +60,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-height: 280px;
+    max-height: 150px;
     overflow-y: auto;
     padding-right: 5px;
   }
@@ -90,13 +95,14 @@
     padding: 20px;
     font-size: 16px;
     color: #333;
-    resize: vertical;
-    min-height: 120px;
+    resize: none;
+    height: 125px;
     font-family: inherit;
     line-height: 1.5;
     box-sizing: border-box;
     outline: none;
     transition: box-shadow 0.2s ease;
+  
   }
   
   .note-textarea:focus {

@@ -107,13 +107,13 @@ const Timer = () => {
             Pomodoro
           </button>
           <button 
-            className={`mode-button ${mode === 'shortBreak' ? 'shortBreak-active' : ''}`}
+            className={`mode-button ${mode === 'shortBreak' ? 'short-break-active' : ''}`}
             onClick={() => switchMode('shortBreak')}
           >
             Short Break
           </button>
           <button 
-            className={`mode-button ${mode === 'longBreak' ? 'longBreak-active' : ''}`}
+            className={`mode-button ${mode === 'longBreak' ? 'long-break-active' : ''}`}
             onClick={() => switchMode('longBreak')}
           >
             Long Break
@@ -125,7 +125,7 @@ const Timer = () => {
           <div className="time">
             {formatTime(timeLeft)}
           </div>
-          <div className="timer-label">
+          <div className={`timer-label ${mode}-label`}>
             {mode === 'pomodoro' ? 'FOCUS TIME' : 'BREAK TIME'}
           </div>
         </div>
@@ -133,7 +133,7 @@ const Timer = () => {
         {/* Timer controls */}
         <div className="timer-controls">
           <button 
-            className="start-button"
+            className={`start-button ${mode}-button`}
             onClick={() => setIsActive(!isActive)}
           >
             {isActive ? 'Pause' : 'Start'}
@@ -154,14 +154,14 @@ const Timer = () => {
           <button 
             onClick={() => adjustTime(-1)} 
             disabled={isActive}
-            className="adjust-button"
+            className={`adjust-button ${isActive ? 'disabled' : ''}`}
           >
             -1 min
           </button>
           <button 
             onClick={() => adjustTime(1)} 
             disabled={isActive}
-            className="adjust-button"
+            className={`adjust-button ${isActive ? 'disabled' : ''}`}
           >
             +1 min
           </button>
@@ -170,7 +170,7 @@ const Timer = () => {
         {/* Statistics */}
         <div className="stats-container">
           <div className="stat-item">
-            <div className="stat-value pomodoro-stat">
+            <div className={`stat-value ${mode}-stat`}>
               {totalPomodoros}
             </div>
             <div className="stat-label">
@@ -178,7 +178,7 @@ const Timer = () => {
             </div>
           </div>
           <div className="stat-item">
-            <div className="stat-value pomodoro-stat">
+            <div className={`stat-value ${mode}-stat`}>
               {cycles}
             </div>
             <div className="stat-label">
@@ -186,7 +186,7 @@ const Timer = () => {
             </div>
           </div>
           <div className="stat-item">
-            <div className="stat-value next-stat">
+            <div className={`stat-value next-stat ${mode}-stat`}>
               {getNextMode()}
             </div>
             <div className="stat-label">
